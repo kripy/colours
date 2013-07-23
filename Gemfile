@@ -10,3 +10,5 @@ gem "coffee-script"
 gem "compass"
 gem "compass-h5bp"
 gem "mustache"
+
+gem "miro"
