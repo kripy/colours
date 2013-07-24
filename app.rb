@@ -70,6 +70,13 @@ class App < Sinatra::Base
       palette = Magick::ImageList.new
       pixels = img.get_pixels(0, 0, img.columns, 1)
     end
+
+    def get_random_image()
+      doc = Nokogiri::HTML(open("http://instagram.com/tags/sunset/feed/recent.rss"))
+      items = doc.xpath('//item')
+      position = rand(0..items.count-1)
+      the_image = items[position].at_xpath("guid").content
+    end
   end
 
   # Function allows both get / post.
@@ -83,11 +90,16 @@ class App < Sinatra::Base
 
     if params.has_key?("img")
       the_image = params[:img]
+
+      re = /\Ahttp.*(jpeg|jpg|gif|png)\Z/
+
+      if the_image.match(re)
+        the_image = the_image
+      else
+        the_image = get_random_image
+      end
     else
-      doc = Nokogiri::HTML(open("http://instagram.com/tags/sunset/feed/recent.rss"))
-      items = doc.xpath('//item')
-      position = rand(0..items.count-1)
-      the_image = items[position].at_xpath("guid").content
+      the_image = get_random_image
     end
 
     original = Magick::Image.read(the_image).first
