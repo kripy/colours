@@ -11,4 +11,4 @@ gem "compass"
 gem "compass-h5bp"
 gem "mustache"
 
-gem "miro"
+gem "rmagick"
