@@ -5,6 +5,8 @@ require "compass-h5bp"
 require "sinatra/support"
 require "mustache/sinatra"
 require "RMagick"
+require "nokogiri"
+require "open-uri"
 
 class App < Sinatra::Base
   base = File.dirname(__FILE__)
@@ -79,9 +81,14 @@ class App < Sinatra::Base
   get '/' do
     @page_title = "Colours"
 
-    #the_image = "http://distilleryimage2.ak.instagram.com/2325f9b6f3ca11e287d022000a1fc4f9_7.jpg"
-    the_image = params[:img]
-    @the_image = the_image
+    if params.has_key?("img")
+      the_image = params[:img]
+    else
+      doc = Nokogiri::HTML(open("http://instagram.com/tags/sunset/feed/recent.rss"))
+      items = doc.xpath('//item')
+      position = rand(0..items.count-1)
+      the_image = items[position].at_xpath("guid").content
+    end
 
     original = Magick::Image.read(the_image).first
      
@@ -99,6 +106,7 @@ class App < Sinatra::Base
       arr_colours.push(colour)    
     end
 
+    @the_image = the_image
     @the_colours = arr_colours
 
     mustache :index

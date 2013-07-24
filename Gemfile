@@ -11,4 +11,5 @@ gem "compass"
 gem "compass-h5bp"
 gem "mustache"
 
+gem "nokogiri"
 gem "rmagick", :require => "RMagick"
