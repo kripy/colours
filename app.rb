@@ -6,6 +6,8 @@ require "sinatra/support"
 require "mustache/sinatra"
 require "rmagick"
 
+# Heroku reload.
+
 class App < Sinatra::Base
   base = File.dirname(__FILE__)
   set :root, base
