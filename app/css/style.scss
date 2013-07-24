@@ -4,9 +4,12 @@
 @include h5bp-chromeframe;
 
 //Start custom styles.
-#navbar {
-  width: 80%;
-  height: 23px;
+.colour-block {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000;
 }
 
 @include h5bp-helpers;

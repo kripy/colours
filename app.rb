@@ -61,12 +61,16 @@ class App < Sinatra::Base
   end   
 
   get '/' do
-    @page_title = 'Colours'
+    @page_title = "Colours"
 
+    #the_image = "http://distilleryimage2.ak.instagram.com/2325f9b6f3ca11e287d022000a1fc4f9_7.jpg"
+    the_image = params[:img]
+
+    @the_image = the_image
     Miro.options[:color_count] = 10
-    colors = Miro::DominantColors.new("http://distilleryimage2.ak.instagram.com/2325f9b6f3ca11e287d022000a1fc4f9_7.jpg")
+    colors = Miro::DominantColors.new(the_image)
+    @the_colours = colors.to_hex
     colors.to_hex.each { |e| puts e } 
-
 
     mustache :index
   end
