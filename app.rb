@@ -4,9 +4,7 @@ require "compass"
 require "compass-h5bp"
 require "sinatra/support"
 require "mustache/sinatra"
-require "rmagick"
-
-# Heroku reload.
+require "RMagick"
 
 class App < Sinatra::Base
   base = File.dirname(__FILE__)

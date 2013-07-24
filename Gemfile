@@ -11,5 +11,4 @@ gem "compass"
 gem "compass-h5bp"
 gem "mustache"
 
-# Heroku reload.
-gem "rmagick"
+gem "rmagick", "2.12.0", :require => "RMagick"
