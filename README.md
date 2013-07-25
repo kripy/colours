@@ -9,16 +9,26 @@ Firstly, make sure you've [installed Ruby](http://www.ruby-lang.org/en/). Also, 
 Then in terminal, clone me:
 
 ```
-$ git clone 
-$ cd my-pizza-man
+$ git clone https://github.com/kripy/colours colours
+$ cd colours
 $ bundle
 $ foreman start
 ```
 
-Open up a browser at ```http://localhost:5000/```.
+Open up a browser at ```http://localhost:5000/```. Then try something like ```http://localhost:5000/?img=http://distilleryimage5.ak.instagram.com/f87f895cf3bf11e29b6e22000aeb1b47_7.jpg```.
 
 ## Deployment
+As with most of my work, it's Heroku ready:
 
+```
+$ cd colours
+$ git init
+$ git add .
+$ git commit -m "init"
+$ heroku create
+$ git push heroku master
+$ heroku open
+```
 ## MIT LICENSE
 
 Copyright (c) 2013 Arturo Escartin
