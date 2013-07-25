@@ -2,7 +2,7 @@
 
 I knocked this one up as a proof of concept and thought I'd share it. Simply feed it an image URL or just hit the root and it'll return a random Instragram image that's been tagged 'sunset'.
 
-Hat tip to [edouard](https://github.com/edouard) [gist](https://gist.github.com/edouard/1787879) for the dominant colour script.
+Hat tip to [edouard](https://github.com/edouard)'s [gist](https://gist.github.com/edouard/1787879) for the dominant colour script.
 
 ## Installation
 
