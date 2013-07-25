@@ -2,6 +2,8 @@
 
 I knocked this one up as a proof of concept and thought I'd share it. Simply feed it an image URL or just hit the root and it'll return a random Instragram image that's been tagged 'sunset'.
 
+Hat tip to [edouard](https://github.com/edouard) [gist](https://gist.github.com/edouard/1787879) for the dominant colour script.
+
 ## Installation
 
 Firstly, make sure you've [installed Ruby](http://www.ruby-lang.org/en/). Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/) as it includes [Foreman](https://github.com/ddollar/foreman) for running Procfile-based applications.
