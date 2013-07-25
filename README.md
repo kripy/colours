@@ -4,6 +4,8 @@ I knocked this one up as a proof of concept and thought I'd share it. Simply fee
 
 Hat tip to [edouard](https://github.com/edouard)'s [gist](https://gist.github.com/edouard/1787879) for the dominant colour script.
 
+There's a working version kicking around on [Heroku](https://kripy-colours.herokuapp.com/). Feed it a URL after the ```=img``` paramater: ```https://kripy-colours.herokuapp.com/?img=http://www.overthinkingit.com/wp-content/uploads/2011/05/RandySavage.jpg```.
+
 ## Installation
 
 Firstly, make sure you've [installed Ruby](http://www.ruby-lang.org/en/). Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/) as it includes [Foreman](https://github.com/ddollar/foreman) for running Procfile-based applications.
